@@ -8,8 +8,8 @@ namespace SAEgym.Models
         public string Username { get; set; }
         public string Password { get; set; }
         public string Email { get; set; }
-        public int SubscriptionId { get; set; }
+        public Subscription Subscription { get; set; }
         public DateTime FirstSubscriptionDay { get; set; }
-        public int TrainerId { get; set; }
+        public Trainer Trainer { get; set; }
     }
 }

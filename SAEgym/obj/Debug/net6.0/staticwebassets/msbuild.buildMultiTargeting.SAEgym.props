@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\SAEgym.props" />
+</Project>
