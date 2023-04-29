@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "+kpdgHsXJd9cygbw5me+fsmSjPvessUhv/GqW5QOIICDAtKW1bvRk0afxzWZTKNNkxnRcAK/8eYMwi3beM3jDw==",
+  "success": true,
+  "projectFilePath": "F:\\Facultate\\SAEgym\\SAEgym\\SAEgym\\SAEgym.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\evely\\.nuget\\packages\\microsoft.visualstudio.azure.containers.tools.targets\\1.17.2\\microsoft.visualstudio.azure.containers.tools.targets.1.17.2.nupkg.sha512"
+  ],
+  "logs": []
+}
