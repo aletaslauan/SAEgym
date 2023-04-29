@@ -1,0 +1,25 @@
+﻿@model Trainer
+
+<h1> Add Trainer</h1>
+
+<form method="post" action="Add" class="mt-5">
+	<div class="mb-3">
+		<label for="" class="form-label">Name</label>
+		<input type="text" class="form-control" asp-for="@Model.Username" />
+	</div>
+	<div class="mb-3">
+		<label for="" class="form-label">Author</label>
+		<input type="text" class="form-control" asp-for="@Model.Password" />
+	</div>
+	<div class="mb-3">
+		<label for="" class="form-label">Release date</label>
+		<input type="text" class="form-control" asp-for="@Model.Email" />
+	</div>
+	<div class="mb-3">
+		<label for="" class="form-label">Description</label>
+		<input type="text" class="form-control" asp-for="@Model.Member" />
+	</div>
+
+
+	<button type="submit" class="btn btn-primary">Submit</button>
+</form>

@@ -1,3 +1,6 @@
+using Microsoft.EntityFrameworkCore;
+using SAEgym.App_Data;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.

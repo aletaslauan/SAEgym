@@ -2,9 +2,8 @@
   "ExpandedNodes": [
     "",
     "\\App_Data",
-    "\\SAEgym",
-    "\\SAEgym\\Models"
+    "\\Controllers",
+    "\\Models"
   ],
-  "SelectedNode": "\\SAEgym\\Models\\Trainer.cs",
   "PreviewInSolutionExplorer": false
 }
