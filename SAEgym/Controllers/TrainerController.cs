@@ -1,26 +1,11 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using SAEgym.App_Data;
 using SAEgym.Models;
-using System.Diagnostics;
 
 namespace SAEgym.Controllers
 {
     public class TrainerController : Controller
     {
-        private readonly ILogger<HomeController> _logger;
-        private readonly DataContext _dataContext;
-
-        public IActionResult Privacy()
-        {
-            return View();
-        }
-
-        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-        public IActionResult Error()
-        {
-            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
-        }
-
         public IActionResult Index()
         {
             return View();
@@ -33,7 +18,7 @@ namespace SAEgym.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> AddTrainer(Trainer trainer)
+        public async Task<IActionResult> AddTrainer(DataContext dataContext, Trainer trainer)
         {
             Trainer trainerModel = new Trainer()
             {
@@ -43,11 +28,11 @@ namespace SAEgym.Controllers
                 Member = trainer.Member
             };
 
-            await _dataContext
+            await dataContext
                 .Trainers
                 .AddAsync(trainerModel);
 
-            await _dataContext
+            await dataContext
                 .SaveChangesAsync();
 
             return View("AddTrainer");
@@ -60,9 +45,9 @@ namespace SAEgym.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> UpdateTrainer(Trainer trainer)
+        public async Task<IActionResult> UpdateTrainer(DataContext dataContext, Trainer trainer)
         {
-            var trainerModel = await _dataContext.Trainers.FindAsync(trainer.Id);
+            var trainerModel = await dataContext.Trainers.FindAsync(trainer.Id);
 
             if (trainerModel != null)
             {
@@ -70,7 +55,7 @@ namespace SAEgym.Controllers
                 trainerModel.Password = trainer.Password;
                 trainerModel.Member = trainer.Member;
 
-                await _dataContext.SaveChangesAsync();
+                await dataContext.SaveChangesAsync();
                 return RedirectToAction("TrainerList");
             }
 
@@ -84,15 +69,15 @@ namespace SAEgym.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> DeleteTrainer(Trainer trainer)
+        public async Task<IActionResult> DeleteTrainer(DataContext dataContext, Trainer trainer)
         {
-            var trainerModel = await _dataContext.Trainers.FindAsync(trainer.Id);
+            var trainerModel = await dataContext.Trainers.FindAsync(trainer.Id);
 
             if (trainerModel != null)
             {
-                _dataContext.Remove(trainer);
+                dataContext.Remove(trainer);
 
-                await _dataContext.SaveChangesAsync();
+                await dataContext.SaveChangesAsync();
             }
 
             return View("DeleteTrainer");
