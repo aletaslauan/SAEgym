@@ -40,7 +40,7 @@ namespace SAEgym.Controllers
                 Id = subscription.Id,
                 SubscriptionName = subscription.SubscriptionName,
                 Price = subscription.Price,
-                IsStudent= subscription.IsStudent
+                IsStudent = subscription.IsStudent
             };
 
             await _dataContext
