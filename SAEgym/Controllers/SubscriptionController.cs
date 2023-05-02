@@ -62,7 +62,7 @@ namespace SAEgym.Controllers
         [HttpPost]
         public async Task<IActionResult> UpdateSubscription(Subscription subscription)
         {
-            var subscriptionModel = await _dataContext.Subscription.FindAsync(subscription.Id);
+            var subscriptionModel = await _dataContext.Subscriptions.FindAsync(subscription.Id);
 
             if (subscriptionModel != null)
             {
@@ -86,7 +86,7 @@ namespace SAEgym.Controllers
         [HttpPost]
         public async Task<IActionResult> DeleteSubscription(Subscription subscription)
         {
-            var subscriptionModel = await _dataContext.Subscription.FindAsync(subscription.Id);
+            var subscriptionModel = await _dataContext.Subscriptions.FindAsync(subscription.Id);
 
             if (subscriptionModel != null)
             {

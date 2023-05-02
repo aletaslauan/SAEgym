@@ -70,12 +70,12 @@ namespace SAEgym.Controllers
 
             if (memberModel != null)
             {
-                memberModel.Username = member.Username,
-                memberModel.Password = member.Password,
-                memberModel.Email = member.Email,
-                memberModel.Subscription = member.Subscription,
-                memberModel.FirstSubscriptionDay = member.FirstSubscriptionDay,
-                memberModel.Trainer = member.Trainer
+                memberModel.Username = member.Username;
+                memberModel.Password = member.Password;
+                memberModel.Email = member.Email;
+                memberModel.Subscription = member.Subscription;
+                memberModel.FirstSubscriptionDay = member.FirstSubscriptionDay;
+                memberModel.Trainer = member.Trainer;
 
                 await _dataContext.SaveChangesAsync();
                 return RedirectToAction("MemberList");
